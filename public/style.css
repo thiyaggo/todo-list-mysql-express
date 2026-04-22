@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Kaithi&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*defini como o tamanho do elemeto é calculado em relação ao width e height*/
+    font-family: "Noto Sans Kaithi", sans-serif;
+}
+body{
+       background-color: rgba(176, 238, 238, 0.196);
+}
+
+/*css home ---------------------*/
+/* css do menu de saida*/
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+#btn-menu {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #cab6b600;
+    border: none;
+}
+
+.menu-opcoes {
+    width: 200px;
+    height: 200px;
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 12px auto;
+}
+.menu-opcoes h2{
+    font-size: 15px;
+    text-align: left;
+    border-bottom: #080707 solid 1px;
+}
+.menu-opcoes i{
+    margin: 10px 5px 5px 0;
+}
+.menu-opcoes button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    width: 100%;
+    text-align: left;
+    
+}
+.menu-opcoes button:hover {
+    border-bottom: #080707 solid 1px;
+   
+}
+.home{
+    display: flex;
+    flex-flow: column;
+}
+.cabeca{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    background-color: rgba(10, 142, 199, 0.744);
+    box-shadow: rgba(62, 66, 67, 0.263) 0px 5px 10px;
+}
+.cabeca h1{
+    cursor: pointer;
+    color: #f3f0f0;
+    font-size: 25px;
+}
+.navegacao, ul, li{
+    display: flex;
+}
+.navegacao ul li a{
+    text-decoration: none;
+    color: azure;
+    font-size: 19px;
+    padding: 3px 5px;
+    margin: 0 10px;
+}
+.navegacao ul li a:hover{
+    color: rgb(0, 50, 176);
+  
+}
+
+.form-user a{
+    text-decoration: none;
+    padding: 10px;
+    color: #ffffff;
+}
+.form-user a:hover{
+     color: rgb(0, 50, 176);
+}
+
+/*css home ---------------------*/
+
+/*css corpo ---------------------*/
+.main-home{
+    display:flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    margin: 100px auto 0px auto;
+}
+.section-1{
+    display: flex;
+    flex-flow: column;
+    width: 70%;
+    height: 80%;
+}
+.section-1 h1,p{
+   text-align: center;
+   padding: 0 0  10px 0px;
+}
+.section-1 div{
+    display: flex;
+    justify-content: center;
+}
+.section-1 div form{
+    display: flex;
+    justify-content: center;
+}
+.section-1 div form input{
+    width: 50rem;
+    padding: 15px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #000000;
+    box-shadow: #000000 1px 2px 8px 0px;
+}
+.section-1 div form button{
+    border-radius: 0 5px 5px 0;
+    border: none;
+    font-size: 16px;
+    color: #000000;
+    padding:5px;
+    background-color: #43e611e4;
+    box-shadow: #000000 3px 2px 8px 0px;
+    cursor: pointer;
+}
+.section-1 div form button:hover{
+    font-size: 16px;
+    color: #000000;
+    background-color: #34b30dcc;
+}
+.section-1 .img{
+    background-image: url(imagens/lista.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: #29252552 0px 0px 8px;
+    width: 100%;
+    height: 1500px;
+}
+.div-ul{
+    margin: 0px auto 5px auto;
+    width: 80%;
+    padding: 20px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 800;
+}
+.div-ul ul{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px 3px;
+}
+.div-ul ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0px 0 8px; 
+    background: rgb(25, 162, 221);
+    margin: 5px 0;
+    border-radius: 2px;
+}
+.btn-edit{
+    background: rgb(8, 146, 8);
+    border: none;
+    padding: 10px;
+    color:#fff;
+    font-size: 16px;
+}
+.btn-delete{
+    background: rgb(221, 27, 13);
+    border: none;
+    padding: 10px;
+    color:#fff;
+    font-size: 16px;
+}
+
+
+/*css corpo ---------------------*/
+/*css home -----------------------*/
+
+/*css Formulario ---------------------*/
+
+.main-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.main-form form{
+    text-align: center;
+    width: 420px;
+    padding: 20px 40px;
+    color: rgb(10, 142, 199);
+    border-radius: 10px;
+    box-shadow: rgba(26, 26, 30, 0.342) 8px 8px 24px;
+    backdrop-filter: blur(20px);
+}
+.div-input{
+    position:relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.div-input input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 40px;
+    border: 2px solid rgba(87, 84, 84, 0.2);
+    outline: none;
+    font-size: 16px;
+    color: rgb(10, 9, 9);
+    padding: 20px 45px 20px 20px;
+}
+.div-input input::placeholder{
+    color: #0b090943;
+}
+.div-input i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.div-label{
+    display: flex;
+    justify-content: space-between;
+}
+.div-label label input{
+    accent-color: #79ff04;
+    font-size: px;
+    margin: 5px;
+}
+.div-label a{
+    text-decoration: none;
+    color: #fff;
+}
+.div-label a:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+.main-form button{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    border-radius: 40px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.main-form button:hover{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    border-radius: 40px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #e3e0e0;
+    transition: 0.4s;
+}
+.div-p{
+    text-align: center;
+    font-size: 14px;
+}
+.div-p a{
+    text-decoration: none;
+    color:#292525;
+}
+.div-p a:hover{
+    text-decoration: underline;
+    color:#080707;
+}
+/*css Formulario ---------------------*/
+/*footer -------------------------------*/
+
+footer{
+    margin-bottom: 0;
+    width: 100%;
+    height: 20px;
+    padding: 20px;
+    background: #a1bde7;
+}
+footer p{
+    margin-bottom:10px;
+    text-align: center;
+}
+/*footer -------------------------------*/

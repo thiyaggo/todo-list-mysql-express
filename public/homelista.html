@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body>
+     
+    <header class="cabeca">
+        <h1><i class="fa-regular fa-face-smile"></i>Bem vindo</h1>
+         <div class="navegacao form-user">
+            <div class="menu">
+                <button id="btn-menu"> <a> <i class="fa-solid fa-circle-user"></i></a></button>
+
+                <div class="menu-opcoes" id="menu-opcoes">
+                    <h2 id="boas-vindas">carregando...</h2>
+                    <button><i class="fa-solid fa-gear"></i>Configurações</button> 
+                    <button><i class="fa-solid fa-asterisk"></i>Preferências</button>
+                    <button id="btn-sair"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sair</button>
+                </div>
+            </div>
+         
+        </div>
+    </header>
+    
+    <main class="main-home">
+        <section class="section-1">
+            <div>
+                <form id="form-tarefa">
+                    <input type="text" id="input-tarefa" name="descricao" placeholder="O que precisar fazer ">
+                    <button type="submit">Adicionar tarefa</button>
+                </form>
+            </div>
+            <div class="div-ul">
+                <ul id="task-list">
+                <!-- As tarefas aparecerão aqui -->
+                </ul>
+            </div>
+        </section>   
+    </main>
+
+    <footer>
+        <p>© 2026 - Todos os direitos reservados</p>
+    </footer>
+    <script type="module">
+        import { mostrarErro, mostrarSucesso } from './js/alerts.js'; 
+        
+    
+        const parametros = new URLSearchParams(window.location.search);
+
+        if (parametros.get('acesso') === 'true') {
+        // Opção A: Um alerta simples do navegador
+            mostrarSucesso('Bem vindo, seja bem vindo a sua sessão!');
+            window.history.replaceState({}, document.title, window.location.pathname);    
+        }
+         
+
+        //porteiro serve para garantir que so usuarios logados vejao essa pagina
+        //async aviza ao navegador que tem processos demorados, com isso permitindo usau o await
+        async function carregarDados() {
+            //faz uma req http para rota criada no node, e envia os cookies da sessão
+            const resposta = await fetch('/api/perfil');
+            const dados = await resposta.json();//converte os dados enviados do servidor em json
+            
+            if (resposta.ok) {//pergunta se a resposta veio certa. 
+                // Se estiver logado, exibe o nome na tela
+                document.getElementById('boas-vindas').innerText = `Olá, ${dados.user.nome}!`;
+            } else {
+                // Se não estiver logado, manda de volta pro login
+                window.location.href = '/index.html';
+                mostrarErro('Você precisa esta logado!' + resultado.user.nome);
+            }
+        }
+        carregarDados();//executa a funçao assim que é lido 
+    
+
+        //codigo pra sair da session
+        document.getElementById('btn-sair').onclick = async () => {
+            const resposta = await fetch('/api/logout', { 
+                method: 'POST' 
+            });
+
+            if (resposta.ok) {
+                // Se o servidor limpou a sessão, mandamos o usuário pro login
+                window.location.href = '/index.html?saiu=true';
+            } else {
+                mostrarErro('Erro ao tentar sair. atualize a pagina');
+            }
+        };
+        const btnMenu = document.getElementById('btn-menu');
+        const menu = document.getElementById('menu-opcoes');
+
+        btnMenu.onclick = () => {
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        };
+   
+    </script>
+    <script src="js/lista.js" type="module"></script>
+</body>
+</html>
