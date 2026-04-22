@@ -1,6 +1,9 @@
 # 📝 TaskManager - Full Stack Todo List
 
 Uma aplicação completa de gerenciamento de tarefas com sistema de autenticação, sessões de usuário e operações CRUD (Create, Read, Update, Delete) personalizadas para cada perfil.
+<div align="center">
+<img src="public/imagens/lista.png" width="700px" />
+</div>
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -51,6 +54,27 @@ O projeto foi organizado seguindo padrões de mercado para facilitar a manutenç
     - Excluir tarefas.
 - [x] **Sistema de Notificações**: Alertas visuais para sucesso, erro e avisos (Login/Logout).
 - [x] **Segurança**: Visualização de senha no login e logout completo da sessão.
+
+## ✨ Visualizando a home
+<div align="center">
+<img src="public/imagens/home.png" width="700px" />
+</div>
+
+## ✨ Visualizando o cadastro
+<div align="center">
+<img src="public/imagens/cadastroprojeto.png" width="700px" />
+</div>
+
+## ✨ Visualizando o login
+<div align="center">
+<img src="public/imagens/login_projeto.png" width="700px" />
+</div>
+
+## ✨ Visualizando o menu de saida
+<div align="center">
+<img src="public/imagens/logout.png" width="700px" />
+</div>
+
 
 ## 🛠️ Como rodar o projeto
 

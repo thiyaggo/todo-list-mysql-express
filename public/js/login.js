@@ -30,7 +30,7 @@ form.onsubmit = async (e) => {//
         window.location.href = '/homelista.html?acesso=true'; // Redireciona via JS
         mostrarSucesso('Bem-vindo, ' + resultado.user.nome);
     } else {
-        mostrarErro('Erro: senha incorreta');
+        mostrarErro('Erro: email ou senha incorreta');
     }
 };
 
