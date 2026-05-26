@@ -17,5 +17,6 @@ CREATE TABLE tarefas (
     user_id INT,
     descricao_tarefa TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('pendente','concluido') DEFAULT 'pendente',
     FOREIGN KEY (user_id) REFERENCES cadastro(id) ON DELETE CASCADE
 );

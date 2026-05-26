@@ -1,0 +1,153 @@
+/*css corpo ---------------------*/
+.main-home{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0px auto;
+    flex: 1;
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 80%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+}
+.list_top{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;/*alinha itens no topo*/
+    width: 100%;
+    height: 100px;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    background-color: #018969e1;
+    flex-shrink: 0; /* Mantém o tamanho fixo do topo */
+}
+
+.list_form{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 80px;
+    padding: 0 10px;
+    
+}
+.list_form input{
+    width: 65%;
+    padding: 12px 20px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.list_form button{
+    width: 35%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color:  #01ae86;
+    color: #f2f2f2;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.5s;
+    border-radius: 0 5px 5px 0;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;    
+}
+.list_form button:hover{
+    background-color: #018969;
+    transition: 0.5s;
+}
+.div-ul{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    overflow-y: auto; /*Ativa a rolagem vertical se necessário */
+    margin: 0px auto 10px auto;
+    width: 80%;
+    padding: 20px;
+    font-size: 16px;
+    color: #213635;
+    font-weight: 800;
+
+}
+.div-ul ul{
+    display: block;
+    width: 80%;
+    max-height: 100%;  
+}
+.div-ul ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0px 0 8px; 
+    background: rgb(255, 255, 255);
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.btn-edit, .btn-delete, .btn-check {
+    text-align: center;
+    margin: 2px 5px;
+    background: rgb(8, 146, 8);
+    border: none;
+    border-radius: 18px;
+    padding: 8px;
+    color:#fff;
+    font-size: 16px;
+}
+.btn-delete{
+    background: rgb(221, 27, 13);
+}
+
+.btn-check{
+    background: rgb(1, 153, 167);
+}
+.btn-edit:hover, .btn-delete:hover, .btn-check:hover{
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+@media (max-width: 1250px){
+    .section{
+        width: 90%;
+    }
+    .list_form{
+        width: 60%;
+    }
+    .div-ul ul{
+        width: 100%;
+    }
+}
+@media (max-width: 767px){
+    .list_form{
+        width: 80%;
+    }
+    .div-ul{
+        width: 100%;
+    }
+}
+@media (max-width: 580px){
+    .div-ul ul li, span{
+        flex-direction: column ;
+        padding: 5px 0 10px 0;
+    }
+    .section{
+        width: 100%;
+        height: 100vh;
+        margin-top: 20px;
+    }
+}
+@media (max-width: 400px){
+    .list_form{
+        width: 100%;
+    }
+}

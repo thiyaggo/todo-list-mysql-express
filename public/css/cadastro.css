@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    padding: 20px 0;
 }
 .main-form form{
     text-align: center;
@@ -90,3 +91,12 @@
     color:#213635;
 }
 /*css Formulario ---------------------*/
+
+@media (max-width: 486px){
+    .main-form{
+        padding: 5px 0;
+    }
+    .main-form form{
+        width: 98%;
+    }
+}

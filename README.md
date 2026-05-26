@@ -55,19 +55,19 @@ O projeto foi organizado seguindo padrões de mercado para facilitar a manutenç
 - [x] **Sistema de Notificações**: Alertas visuais para sucesso, erro e avisos (Login/Logout).
 - [x] **Segurança**: Visualização de senha no login e logout completo da sessão.
 
-## ✨ Visualizando a home
+## ✨ Visualizando o login
 <div align="center">
-<img src="public/imagens/home.png" width="700px" />
+<img src="public/imagens/lista2.png" width="700px" />
 </div>
 
 ## ✨ Visualizando o cadastro
 <div align="center">
-<img src="public/imagens/cadastroprojeto.png" width="700px" />
+<img src="public/imagens/lista3.png" width="700px" />
 </div>
 
-## ✨ Visualizando o login
+## ✨ Visualizando os listas
 <div align="center">
-<img src="public/imagens/login_projeto.png" width="700px" />
+<img src="public/imagens/lista1.png" width="700px" />
 </div>
 
 ## ✨ Visualizando o menu de saida

@@ -71,7 +71,20 @@ const alterarTarefa = (req,res)=>{
     });
 
 }
-export default {tarefas, criarTarefa, deletarTarefa, alterarTarefa};// transformo em obj pra usar no padrao
+
+const tarefaConcluida = (req, res)=>{
+     const { id } = req.params;
+    const { status } = req.body;
+
+    db.query('UPDATE tarefas SET status = ? WHERE id = ?', [status, id], (err, results)=>{
+       if(err){
+        console.log(err);
+        return res.status(500).json({mensagem: 'erro ao atualizar o status'});
+       } 
+    return res.status(200).json({mensagem: 'Status atualizado com sucesso'});
+    });
+}
+export default {tarefas, criarTarefa, deletarTarefa, alterarTarefa, tarefaConcluida};// transformo em obj pra usar no padrao
 
 //Aqui você decide o que fazer: "Vou criptografar a senha", "Vou checar se o e-mail existe", 
 // "Vou salvar no banco". Ele recebe os dados e decide se o usuário pode entrar ou não.

@@ -15,7 +15,8 @@ router.post('/logout', authMiddleware, loginAuthController.logout);
 router.get('/tarefas', authMiddleware, taskAuthController.tarefas);
 router.post('/criartarefas', authMiddleware, taskAuthController.criarTarefa);
 router.delete('/deletarTarefas/:id', authMiddleware, taskAuthController.deletarTarefa);
-router.put('/alterarTarefas/:id',authMiddleware, taskAuthController.alterarTarefa);
+router.put('/alterarTarefas/:id', authMiddleware, taskAuthController.alterarTarefa);
+router.put('/concluirTarefa/:id', authMiddleware, taskAuthController.tarefaConcluida);
 
 export default router;// exportando no final
 

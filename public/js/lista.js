@@ -9,7 +9,7 @@ import { mostrarErro, mostrarSucesso } from './alerts.js';
             const descricao = document.querySelector('#input-tarefa').value;
             
             //envia os dados para o servidor atravez do fetch(requisição)
-            const response = await fetch ('api/criartarefas', {
+            const response = await fetch ('/api/criartarefas', {
                 //configura a requisição
                 method:'POST',//metodo de enviar
                 headers:{'Content-Type': 'application/json'},//diz que vai enviar em json
@@ -36,6 +36,41 @@ import { mostrarErro, mostrarSucesso } from './alerts.js';
                 const li = document.createElement('li');
                 const span = document.createElement('span');
                 span.textContent = `${tarefas.descricao_tarefa}`;
+
+                    if(tarefas.status === 'concluido'){
+                        span.style.textDecoration = 'line-through';
+                        span.style.opacity = '0.6';
+                    }
+                    const btnConcluir = document.createElement('button');
+
+                    btnConcluir.textContent =
+                        tarefas.status === 'concluido'
+                        ? 'Desmarcar'
+                        : 'Concluir';
+
+                    btnConcluir.classList.add('btn-check');
+
+                    btnConcluir.onclick = async () => {
+
+                    const novoStatus =
+                        tarefas.status === 'pendente'
+                        ? 'concluido'
+                        : 'pendente';
+
+                    await fetch(`/api/concluirTarefa/${tarefas.id}`,{
+                        method:'PUT',
+                        headers:{
+                            'Content-Type':'application/json'
+                        },
+                        body:JSON.stringify({
+                            status: novoStatus
+                        })
+                    });
+
+                    loadTasks();
+                };
+
+               
 
                 const btnContainer = document.createElement('div');
 
@@ -64,6 +99,7 @@ import { mostrarErro, mostrarSucesso } from './alerts.js';
                     mostrarSucesso('tarefa excluida com sucesso!');
                      loadTasks(); // recarrega a lista
                 };
+            btnContainer.appendChild(btnConcluir);
             btnContainer.appendChild(btnDelete);
             btnContainer.appendChild(btnAlterar);
             li.appendChild(span);
