@@ -6,10 +6,60 @@
     font-family: "Noto Sans Kaithi", sans-serif;
 }
 body{
-       background-color: rgba(176, 238, 238, 0.196);
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    height: 100vh;
+    margin: 0; 
+
+    /*cores usado no site
+    #oaocod  #213635  #1c5052  #348e91 #f2f2f2
+    */      
 }
 
-/*css home ---------------------*/
+main{flex: 1;}
+
+footer{
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    color: #f2f2f2;
+    background: #1c5052;
+}
+
+
+/*css header---------------------*/
+.cabeca{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    background-color: #348e91;
+    box-shadow: rgba(62, 66, 67, 0.263) 0px 5px 10px;
+}
+.cabeca h1{
+    cursor: pointer;
+    color: #f2f2f2;
+    font-size: 25px;
+}
+.navegacao, ul, li{
+    display: flex;
+}
+.navegacao ul li a{
+    text-decoration: none;
+    color: #f2f2f2;
+    font-size: 19px;
+    padding: 3px 5px;
+    margin: 0 10px;
+}
+.navegacao ul li a:hover{
+    color: #213635;
+    /*color: rgb(0, 50, 176);
+  */
+}
+/*css header---------------------*/
+
+
 /* css do menu de saida*/
 .menu {
     position: relative;
@@ -59,33 +109,6 @@ body{
 .home{
     display: flex;
     flex-flow: column;
-}
-.cabeca{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 8px 0;
-    background-color: rgba(10, 142, 199, 0.744);
-    box-shadow: rgba(62, 66, 67, 0.263) 0px 5px 10px;
-}
-.cabeca h1{
-    cursor: pointer;
-    color: #f3f0f0;
-    font-size: 25px;
-}
-.navegacao, ul, li{
-    display: flex;
-}
-.navegacao ul li a{
-    text-decoration: none;
-    color: azure;
-    font-size: 19px;
-    padding: 3px 5px;
-    margin: 0 10px;
-}
-.navegacao ul li a:hover{
-    color: rgb(0, 50, 176);
-  
 }
 
 .form-user a{
@@ -202,113 +225,5 @@ body{
 /*css corpo ---------------------*/
 /*css home -----------------------*/
 
-/*css Formulario ---------------------*/
 
-.main-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-.main-form form{
-    text-align: center;
-    width: 420px;
-    padding: 20px 40px;
-    color: rgb(10, 142, 199);
-    border-radius: 10px;
-    box-shadow: rgba(26, 26, 30, 0.342) 8px 8px 24px;
-    backdrop-filter: blur(20px);
-}
-.div-input{
-    position:relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-}
 
-.div-input input{
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border-radius: 40px;
-    border: 2px solid rgba(87, 84, 84, 0.2);
-    outline: none;
-    font-size: 16px;
-    color: rgb(10, 9, 9);
-    padding: 20px 45px 20px 20px;
-}
-.div-input input::placeholder{
-    color: #0b090943;
-}
-.div-input i{
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.div-label{
-    display: flex;
-    justify-content: space-between;
-}
-.div-label label input{
-    accent-color: #79ff04;
-    font-size: px;
-    margin: 5px;
-}
-.div-label a{
-    text-decoration: none;
-    color: #fff;
-}
-.div-label a:hover{
-    text-decoration: underline;
-    color: #fff;
-}
-.main-form button{
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-    border-radius: 40px;
-    border: none;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-}
-.main-form button:hover{
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-    border-radius: 40px;
-    border: none;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    background: #e3e0e0;
-    transition: 0.4s;
-}
-.div-p{
-    text-align: center;
-    font-size: 14px;
-}
-.div-p a{
-    text-decoration: none;
-    color:#292525;
-}
-.div-p a:hover{
-    text-decoration: underline;
-    color:#080707;
-}
-/*css Formulario ---------------------*/
-/*footer -------------------------------*/
-
-footer{
-    margin-bottom: 0;
-    width: 100%;
-    height: 20px;
-    padding: 20px;
-    background: #a1bde7;
-}
-footer p{
-    margin-bottom:10px;
-    text-align: center;
-}
-/*footer -------------------------------*/

@@ -3,31 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Cadastro</title>
+    <title>Perfil</title>
 </head>
-<body>
+<body class="body-login">
+        
     <header class="cabeca">
         <h1><i class="fa-regular fa-face-smile"></i>Bem vindo</h1>
         <div class="navegacao">
             <ul>
-                <li><a href="home.html"><i class="fa-solid fa-house-chimney"></i>Home</i></a></li>          
-            </ul>
-        </div>
-        <div class="navegacao">
-            <ul>
-                <li><a href="index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Acessar Tarefas</a></li>           
+                <li><a href="home.html"><i class="fa-solid fa-house-chimney"></i>Home</i></a></li>        
             </ul>
         </div>
     </header>
-     <main class="main-form">
-        <form action="/api/cadastro" method="POST">
-            <h1>Cadastro</h1>
-            <div class="div-input">
-                <input type="text" name="nome" placeholder="Nome completo">
-                <i class="fa-solid fa-circle-user"></i>
-            </div>
+    
+    <main class="main-form" >
+        <form id="form-login">
+            <h1>login</h1>
             <div class="div-input">
                 <input type="email" name="email" placeholder="e-mail">
                 <i class="fa-solid fa-user"></i>
@@ -41,28 +35,16 @@
                     <input type="checkbox" id="verSenha">Mostrar senha
                 </label>
             </div>
-            <button type="submit" value="cadastro">Cadastrar</button>
+            <button type="submit" value="login">Acessar</button>
             <div class="div-p">
-                <p>Já tem conta.<a href="index.html">Voltar ao login</a></p>
+                <p>Não tem conta. <a href="/html/cadastro.html">Cadastrar </a></p>
             </div>
         </form>        
-   </main>  
+   </main>
+
     <footer>
         <p>© 2026 - Todos os direitos reservados</p>
     </footer>
-    <script>
-        // mostrar senha
-        const inputSenha = document.getElementById('senha');
-        const checkbox = document.getElementById('verSenha');
-
-        checkbox.addEventListener('change', () => {
-            if (checkbox.checked) {
-                inputSenha.type = 'text'; // mostra
-            } else {
-                inputSenha.type = 'password'; // esconde
-            }
-        });
-
-    </script>
+    <script src="/js/login.js" type="module"></script>
 </body>
 </html>

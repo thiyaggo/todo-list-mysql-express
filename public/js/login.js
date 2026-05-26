@@ -1,4 +1,4 @@
-import { mostrarErro, mostrarSucesso } from './alerts.js';
+import { mostrarErro, mostrarSucesso, mostrarAlert } from './alerts.js';
 //envia os dados atraves do metodo post assim que clic no botao pro servidor
 
 // messangem caso a pessoa tenha se cadastrado com sucesso
@@ -18,20 +18,30 @@ form.onsubmit = async (e) => {//
     const dados = new FormData(form);
     const corpo = Object.fromEntries(dados);
 
-    const resposta = await fetch('/api/login', {
+ // Validação extra no front-end antes de gastar internet com o fetch
+    if (!corpo.email.trim() || !corpo.senha.trim()) {
+        mostrarAlert('Por favor, preencha todos os campos.');
+        return;
+    }
+    try{
+        const resposta = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(corpo)
-    });
+        });
 
-    const resultado = await resposta.json();
+        const resultado = await resposta.json();
 
-    if (resposta.ok) {
-        window.location.href = '/homelista.html?acesso=true'; // Redireciona via JS
-        mostrarSucesso('Bem-vindo, ' + resultado.user.nome);
-    } else {
-        mostrarErro('Erro: email ou senha incorreta');
-    }
+        if (resposta.ok) {
+            window.location.href = '/html/homelista.html?acesso=true'; // Redireciona via JS
+            mostrarSucesso('Bem-vindo, ' + resultado.user.nome);
+        } else {
+            mostrarAlert('Erro: email ou senha incorreta');
+        }
+    }catch (err) {
+        console.error(err);
+        mostrarErro('Erro ao conectar com o servidor.');
+    }   
 };
 
 // mostrar senha

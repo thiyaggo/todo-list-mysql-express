@@ -7,6 +7,10 @@ export function mostrarErro(texto) {
     criarAlerta(texto, '#be3c2e', 'fa-circle-xmark');
 }
 
+export function mostrarAlert(texto) {
+    criarAlerta(texto, '#a1a401', 'fa-circle-xmark');
+}
+
 function criarAlerta(texto, cor, icone) {
     const msg = document.createElement('div');
     msg.innerHTML = `<i class="fa-solid ${icone}"></i> ${texto}`;
@@ -27,4 +31,4 @@ function criarAlerta(texto, cor, icone) {
     }, 3000);
 }
 
-export default {mostrarErro, mostrarSucesso};
+export default {mostrarErro, mostrarSucesso, mostrarAlert};

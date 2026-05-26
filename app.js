@@ -17,6 +17,11 @@ const __dirname = path.dirname(__filename);
 // configurando a pasta public pro import entender
 app.use(express.static(path.join(__dirname, 'public')));
 
+//definindo a rota principal index
+app.get('/', (req, res)=>{
+   res.sendFile(path.join(__dirname, 'public', 'html', 'index.html'));
+});
+
 // Configuração da Sessão
 app.use(session({
     secret:process.env.SESSION_SECRET,

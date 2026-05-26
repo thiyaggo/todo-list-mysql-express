@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Home</title>
 </head>
 <body>
@@ -46,7 +46,7 @@
         <p>© 2026 - Todos os direitos reservados</p>
     </footer>
     <script type="module">
-        import { mostrarErro, mostrarSucesso } from './js/alerts.js'; 
+        import { mostrarErro, mostrarSucesso } from '/js/alerts.js'; 
         
     
         const parametros = new URLSearchParams(window.location.search);
@@ -70,7 +70,7 @@
                 document.getElementById('boas-vindas').innerText = `Olá, ${dados.user.nome}!`;
             } else {
                 // Se não estiver logado, manda de volta pro login
-                window.location.href = '/index.html';
+                window.location.href = '/html/index.html';
                 mostrarErro('Você precisa esta logado!' + resultado.user.nome);
             }
         }
@@ -85,7 +85,7 @@
 
             if (resposta.ok) {
                 // Se o servidor limpou a sessão, mandamos o usuário pro login
-                window.location.href = '/index.html?saiu=true';
+                window.location.href = '/html/index.html?saiu=true';
             } else {
                 mostrarErro('Erro ao tentar sair. atualize a pagina');
             }
@@ -98,6 +98,6 @@
         };
    
     </script>
-    <script src="js/lista.js" type="module"></script>
+    <script src="../js/lista.js" type="module"></script>
 </body>
 </html>
