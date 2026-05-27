@@ -119,24 +119,26 @@ footer{
     border-bottom: #080707 solid 1px;
    
 }
-.home{
-    display: flex;
-    flex-flow: column;
-}
-
-.form-user a{
-    text-decoration: none;
-    padding: 10px;
-    color: #ffffff;
-}
-.form-user a:hover{
-     color: rgb(0, 50, 176);
-}
-
 @media (max-width: 400px){
     .menu-opcoes{
         width: 200px;
         right: -50px;
     }
 }
+/*css da pagina home --------------------*/
+.list_top_home{
+    display: flex;
+    justify-content: center;
+    align-items: center;/*alinha itens no topo*/
+    width: 100%;
+    height: 100px;
+    border-radius: 8px 8px 0 0;
+    background-color: #018969e1;
+    color:#f2f2f2;
+}
 
+.section div p{
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+}
