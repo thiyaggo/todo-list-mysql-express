@@ -36,7 +36,7 @@ O projeto foi organizado seguindo padrões de mercado para facilitar a manutenç
 │   └── /js         # Lógica do navegador e alertas
 ├── /routes         # Endpoints da aplicação
 ├── .env            # Variáveis sensíveis (não enviado ao GitHub)
-└── server.js       # Inicialização do servidor
+└── app.js       # Inicialização do servidor
 
 ```
 
